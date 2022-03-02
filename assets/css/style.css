@@ -1,0 +1,31 @@
+h1, h3, h5, p {
+    text-align: center;
+}
+.col-8 {
+    border: 0.3rem solid #AB7342;
+}
+.btn {
+    background-color: #AB7342;
+    color: white;
+    font-weight: bold;
+}
+
+/* Début TP Calendrier */
+.table {
+    text-align: center;
+}
+.table .table-dark {
+    border: white;
+}
+.table .table-dark th {
+    background-color: #AB7342;
+}
+.table tbody {
+    border-top: white!important;
+}
+@media (min-width: 992px) {
+    .table {
+        table-layout: fixed;
+    }
+}
+/* Fin TP Calendrier */
