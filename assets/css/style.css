@@ -1,13 +1,9 @@
-h1, h3, h5, p {
-    text-align: center;
+header .navbar {
+    background-color: #AB7342;
 }
-.col-8 {
-    border: 0.3rem solid #AB7342;
-}
-.btn {
+.calendarBtn {
     background-color: #AB7342;
     color: white;
-    font-weight: bold;
 }
 
 /* Début TP Calendrier */
