@@ -1,10 +1,9 @@
 <?php
     $dateToday = new DateTime();
     $actualYear = $dateToday -> format('Y');
-    $actualMonth = $dateToday -> format('n');
+    $actualMonth = $dateToday -> format('m');
     $actualDay = $dateToday -> format('N');
     $actualNumDay = $dateToday -> format('j');
-    // $daysMonthNumber = cal_days_in_month(CAL_GREGORIAN, $choiceNumMonth, $choiceYear);
     $startYear = $actualYear - 30;
     $endYear = $actualYear + 30;
     $daysArray =
@@ -19,15 +18,15 @@
     ];
     $monthsArray =
     [
-        '1' => 'Janvier',
-        '2' => 'Février',
-        '3' => 'Mars',
-        '4' => 'Avril',
-        '5' => 'Mai',
-        '6' => 'Juin',
-        '7' => 'Juillet',
-        '8' => 'Août',
-        '9' => 'Septembre',
+        '01' => 'Janvier',
+        '02' => 'Février',
+        '03' => 'Mars',
+        '04' => 'Avril',
+        '05' => 'Mai',
+        '06' => 'Juin',
+        '07' => 'Juillet',
+        '08' => 'Août',
+        '09' => 'Septembre',
         '10' => 'Octobre',
         '11' => 'Novembre',
         '12' => 'Décembre'
@@ -75,7 +74,7 @@
                         <div class="row px-5 justify-content-center">
                             <div class="col-12 mt-3 col-lg-2">
                                 <select required class="form-select" name="months" aria-label="years select">
-                                    <option value="<?= $actualMonth; ?>" selected><?= $monthsArray[$actualMonth]; ?></option>
+                                    <option value=<?= $choiceNumMonth; ?> selected><?= $choiceMonth; ?></option>
                                     <?php
                                         foreach ($monthsArray as $monthKey => $monthValue) {
                                             echo '<option value="'.$monthKey.'">'.$monthValue.'</option>';
@@ -85,11 +84,11 @@
                             </div>
                             <div class="col-12 mt-3 col-lg-2">
                                 <select required class="form-select" name="years" aria-label="years select">
-                                    <option value="<?= $actualYear; ?>" selected><?= $actualYear; ?></option>
+                                    <option value=<?= $choiceYear; ?> selected><?= $choiceYear; ?></option>
                                     <?php
                                         for ($year = $startYear; $year <= $endYear ; $year++) { 
                                             echo '<option value="'.$year.'">'.$year.'</option>';
-                                        }
+                                        };
                                     ?>
                                 </select>
                             </div>
@@ -113,58 +112,25 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <?php
+                                            $daysMonthNumber = cal_days_in_month(CAL_GREGORIAN, $choiceNumMonth, $choiceYear);
+                                            $firstDay = date('N', mktime(0, 0, 0, $choiceNumMonth, 1, $choiceYear));
+                                            $lastDay = date('N', mktime(0, 0, 0, $choiceNumMonth, $daysMonthNumber, $choiceYear));
+                                            for ($i = 0; $i < $firstDay - 1; $i++) { 
+                                                echo '<td></td>';
+                                            };
+                                            for ($day = 1; $day <= $daysMonthNumber ; $day++) {
+                                                echo '<td>'.$day.'</td>';
+                                                if (($firstDay -1 + $day) % 7 == 0) {
+                                                    echo '</tr><tr>';
+                                                };
+                                            };
+                                            if ($day = $daysMonthNumber ) {
+                                                for ($i = 7; $i > $lastDay; $i--) { 
+                                                    echo '<td></td>';
+                                                };
+                                            };
+                                        ?>
                                     </tr>
                                 </tbody>
                             </table>
