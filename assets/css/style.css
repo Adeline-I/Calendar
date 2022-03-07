@@ -1,7 +1,7 @@
 header .navbar {
     background-color: #AB7342;
 }
-.calendarBtn {
+.calendarBtn, .appointmentBtn {
     background-color: #AB7342;
     color: white;
 }
@@ -25,13 +25,20 @@ header .navbar {
 .table tbody {
     border-top: white!important;
 }
-.table tbody .dayMonth {
+.table tbody .dayMonth, .table tbody .lastDayPast, .table tbody .firstDayNext {
     font-weight: bold;
     text-align: start;
     height: 6rem;
 }
-.table tbody .dayMonth:hover, .table tbody .dayMonth:focus, .table tbody .dayToday {
+.table tbody .dayMonth:hover, .table tbody .dayMonth:focus, .table tbody .dayAppointement {
     background-color: #CDAA85;
+}
+.table tbody .lastDayPast, .table tbody .firstDayNext {
+    background-color: #D0CCC4;
+    color: #88766C!important;
+}
+.table tbody .dayToday {
+    border: 0.3rem solid #AB7342;
 }
 @media (min-width: 992px) {
     .table {
