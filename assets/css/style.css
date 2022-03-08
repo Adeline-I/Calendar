@@ -11,7 +11,6 @@ header .navbar {
 .pastNextIcon {
     color: white;
 }
-
 /* Début TP Calendrier */
 .table {
     text-align: center;
@@ -30,7 +29,7 @@ header .navbar {
     text-align: start;
     height: 6rem;
 }
-.table tbody .dayMonth:hover, .table tbody .dayMonth:focus, .table tbody .dayAppointement {
+.table tbody .dayAppointement {
     background-color: #CDAA85;
 }
 .table tbody .lastDayPast, .table tbody .firstDayNext {

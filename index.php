@@ -280,7 +280,7 @@
                                             $lastDayPast = $lastDayPast - $firstDay + 2;
                                             // Ajout de cases vides au début si le 1er jour du mois ne tombe pas un lundi
                                             for ($i = 0; $i < $firstDay - 1; $i++) { 
-                                                echo '<td role="button" class="lastDayPast">'.$lastDayPast.'</td>';
+                                                echo '<td class="lastDayPast">'.$lastDayPast.'</td>';
                                                 $lastDayPast = $lastDayPast + 1;
                                             };
 
@@ -298,11 +298,11 @@
                                                 if (!empty($appointmentArray)) {
                                                     foreach ($appointmentArray as $appointmentKey => $appointmentValue) {
                                                         if ($newDay == ($appointmentArray[$appointmentKey]->dateAppointment)) {
-                                                            $dayEvent = $dayEvent.'<br> <div class="dayAppointement">'.$appointmentArray[$appointmentKey]->lastname.' '.$appointmentArray[$appointmentKey]->gynecoObstetricConsult.'</div>';
+                                                            $dayEvent = $dayEvent.' <div class="dayAppointement">'.$appointmentArray[$appointmentKey]->lastname.' '.$appointmentArray[$appointmentKey]->gynecoObstetricConsult.'</div>';
                                                         };
                                                     };
                                                 };
-                                                echo '<td role="button" class="dayMonth '.$dayTodayClasse.'">'.$day.' '.$dayEvent.'</td>';
+                                                echo '<td class="dayMonth '.$dayTodayClasse.'">'.$day.' '.$dayEvent.'</td>';
 
                                                 if (($firstDay -1 + $day) % 7 == 0) {
                                                     echo '</tr><tr>';
@@ -313,7 +313,7 @@
                                             // Ajout de cases vides à la fin si le dernier jour du mois ne tombe pas un dimanche
                                             if ($day = $daysMonthNumber ) {
                                                 for ($i = 7; $i > $lastDay; $i--) {
-                                                    echo '<td role="button" class="firstDayNext">'.$firstDayNext.'</td>';
+                                                    echo '<td class="firstDayNext">'.$firstDayNext.'</td>';
                                                     $firstDayNext = $firstDayNext + 1;
                                                 };
                                             };
