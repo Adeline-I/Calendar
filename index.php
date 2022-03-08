@@ -298,7 +298,7 @@
                                                 if (!empty($appointmentArray)) {
                                                     foreach ($appointmentArray as $appointmentKey => $appointmentValue) {
                                                         if ($newDay == ($appointmentArray[$appointmentKey]->dateAppointment)) {
-                                                            $dayEvent = $dayEvent.'<br> <span class="dayAppointement">'.$appointmentArray[$appointmentKey]->lastname.' '.$appointmentArray[$appointmentKey]->gynecoObstetricConsult.'</span>';
+                                                            $dayEvent = $dayEvent.'<br> <div class="dayAppointement">'.$appointmentArray[$appointmentKey]->lastname.' '.$appointmentArray[$appointmentKey]->gynecoObstetricConsult.'</div>';
                                                         };
                                                     };
                                                 };
