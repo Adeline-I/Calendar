@@ -5,6 +5,13 @@ header .navbar {
     background-color: #AB7342;
     color: white;
 }
+.form-select:focus {
+    border-color: #AB7342;
+    box-shadow: 0 0 0 0.25rem rgb(171 115 66 / 25%);
+}
+option:checked, option:hover { 
+    background: #AB7342!important;
+}
 .todayFr {
     color: white;
 }
@@ -27,7 +34,7 @@ header .navbar {
 .table tbody .dayMonth, .table tbody .lastDayPast, .table tbody .firstDayNext {
     font-weight: bold;
     text-align: start;
-    height: 6rem;
+    height: 5.6rem;
 }
 .table tbody .dayAppointement {
     background-color: #CDAA85;
@@ -38,6 +45,32 @@ header .navbar {
 }
 .table tbody .dayToday {
     border: 0.3rem solid #AB7342;
+}
+.modal-header, .modal-footer {
+    background-color: #AB7342;
+}
+.form-control:focus {
+    border-color: #AB7342;
+    box-shadow: 0 0 0 0.25rem rgb(171 115 66 / 25%);
+}
+.form-check-input:checked {
+    background-color: #AB7342;
+    border-color: #AB7342;
+}
+.form-check-input:focus {
+    border-color: #AB7342;
+    box-shadow: 0 0 0 0.25rem rgb(171 115 66 / 25%);
+}
+.modalType {
+    text-decoration: underline #AB7342;
+    font-weight: bold;
+}
+.saveBtn {
+    background-color: #D0CCC4;
+    font-weight: bold;
+}
+.saveBtn:hover {
+    background-color: #CDAA85;
 }
 @media (min-width: 992px) {
     .table {
